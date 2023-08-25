@@ -1,0 +1,17 @@
+    //break points
+    @media (max-width: 576px) {
+        .section-main {
+            &::after {
+                display: none;
+            }
+            .section-content {
+                width: 85%;
+                .title {
+                    font-size: 30px;
+                }
+            }
+        }
+        .chat-box {
+            right: 5px;
+        }
+    }

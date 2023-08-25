@@ -1,0 +1,32 @@
+  // variables:
+  $font: 'Kumbh Sans', sans-serif;
+  $white: #ffffff;
+  $blue: #5964e0;
+  $dark: #2d2d37;
+  $grey: #969aa3;
+
+  $--body-bckg: --body-bckg;
+  $--header-color: --header-color;
+  $--border-color: --border-color;
+  $--holder-color: --holder-color;
+  $--main-color: --main-color;
+  $--btn-color: --btn-color;
+
+  $theme-map-light: (
+      $--body-bckg: #f5f6f8,
+      $--header-color: #ffffff,
+      $--border-color: #ebebeb,
+      $--holder-color: #ffffff,
+      $--main-color: #2d2d37,
+      $--btn-color: #5964e0
+  );
+
+  $theme-map-dark: (
+      $--body-bckg: #121721,
+      $--header-color: #19202d,
+      $--border-color: #616060,
+      $--holder-color: #19202d,
+      $--main-color: #ffffff,
+      $--btn-color: #7983f8
+  );
+  

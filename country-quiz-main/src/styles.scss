@@ -1,0 +1,226 @@
+// import font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+// variables
+:root {
+  // colors
+  --clr-white: #ffffff;
+  --clr-dark: #1d355d;
+  --clr-darkBlue: #2f527b;
+  --clr-purple: rgba(96,102,208,.7);
+  --clr-green: #60bf88;
+  --clr-red: #ea8282;
+  --clr-orange: #f9a826;
+  // font
+  --font: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// global styles
+body {
+  font-family: var(--font);
+  color: var(--clr-dark);
+  font-size: 18px;
+  line-height: 1.8;
+  background: url('./images/background.png') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  color: var(--clr-darkBlue);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+button {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+// custom styles
+#app_container {
+  max-width: 464px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.quiz-title {
+  color: var(--clr-white);
+  text-transform: uppercase;
+}
+
+.quiz {
+  position: relative;
+  padding: 40px 30px;
+  background: var(--clr-white);
+  border-radius: 20px;
+
+  &-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 35px;
+
+    .holder-image {
+      position: absolute;
+      top: -70px;
+      right: 0;
+    }
+
+    .quiz-question {
+      .question-flag {
+        img {
+          width: 80px;
+        }
+      }
+    }
+
+    .quiz-answers {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .quiz-answer {
+        position: relative;
+        gap: 30px;
+        width: 100%;
+        font-weight: 500;
+        padding: 15px 20px 15px 70px;
+        color: var(--clr-purple);
+        text-align: left;
+        border: 2px solid var(--clr-purple);
+        border-radius: 15px;
+        counter-increment: counterAnswer;
+        transition: all 0.3s ease-in-out;
+
+        &::before {
+          content: counter(counterAnswer, upper-alpha);
+          font-size: 22px;
+          font-weight: 500;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 20px;
+        }
+
+        &:hover {
+          color: var(--clr-white);
+          background: var(--clr-orange);
+          border-color: var(--clr-orange);
+        }
+
+        &.correct {
+          color: var(--clr-white);
+          background: var(--clr-green);
+          border-color: var(--clr-green);
+        }
+
+        &.incorrect {
+          color: var(--clr-white);
+          background: var(--clr-red);
+          border-color: var(--clr-red);
+        }
+      }
+    }
+
+    .quiz-next {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        color: var(--clr-white);
+        background: var(--clr-orange);
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    > img {
+      width: 230px;
+    }
+
+    .results-information {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      span {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--clr-green);
+      }
+    }
+
+    .btn {
+      color: var(--clr-dark);
+      padding: 12px 40px;
+      border: 2px solid var(--clr-dark);
+
+      &:hover {
+        color: var(--clr-white);
+        background: var(--clr-orange);
+        border-color: var(--clr-orange);
+      }
+    }
+  }
+}
+
+// breakpoints
+@media (max-width: 767.98px) {
+  body {
+    padding: 20px 0;
+  }
+
+  .quiz { 
+    padding: 20px;
+
+    &-holder {
+      padding-top: 0;
+
+      .holder-image {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+* postoji dva tipa pitanja
+  - glavni grad drzave
+  - pogodi zastavu drzave
+
+* kada se pogodi pitanje ide se na sledece, odnosno kada se omane prikazuje
+se rezultat
+
+ideja jeste da iz countries.json vratis nasumicnu drzavu, od koje na osnovu tipa pitanja
+mozes da zatrazis glavni grad ili zastavu i onda je potrebno da pored toga
+povucemo jos tri odgovora odnosno to ce biti nove tri drzave koje ce se takodje povuci
+nasumicno iz countries.json samo je bitno da se ne poklope sa ovom prvom
+
+
+* imaces tri komponente:
+  - odabir tipa pitanja (ili nasucmino da mesa pitanja bez odabira)
+  - question (pitanje) componenta
+  - result (rezultat) componenta
+
+  
+- beli okvir treba da ostane univerzalan odnosno unutar njega da se smenjuju componente
+- za sam fetch koirsti ces onaj promise settle ? da prvo fetchujes drzave pa onda ovaj api
+dobro bi bilo da imas neku funkciju (utils) koja ce da ti na osnovu zahteva vracati podatke (drzave)
+
+
+API: https://restcountries.com/
+
+Example: https://musical-meringue-211f04.netlify.app/

@@ -1,0 +1,32 @@
+ //helper class
+ .hide-for-mobile {
+    @include breakpoint-down(small) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+}
+
+.container {
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;        
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+}
